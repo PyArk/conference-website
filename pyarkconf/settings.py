@@ -60,7 +60,6 @@ MEDIA_URL = "/site_media/media/"
 # in apps" "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(PACKAGE_ROOT, "static")
-print STATIC_ROOT
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -214,10 +213,14 @@ ACCOUNT_USER_DISPLAY = lambda user: user.email
 
 AUTHENTICATION_BACKENDS = [
     # Permissions Backends
-    "symposion.teams.backends.TeamPermissionsBackend",
+    # "symposion.teams.backends.TeamPermissionsBackend",
 
     # Auth backends
-    "account.auth_backends.EmailAuthenticationBackend",
+    # "account.auth_backends.EmailAuthenticationBackend",
+
+    # I had to revert back to ModelBackend because the other backends prevent you from logging in.
+    # They might be necessary in the future for something, but I'm not sure what or why.
+    "django.contrib.auth.backends.ModelBackend",
 ]
 
 

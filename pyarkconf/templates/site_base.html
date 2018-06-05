@@ -16,6 +16,7 @@
 {% block extra_head_base %}
     <link href="{% static "pinax/css/theme.css" %}" rel="stylesheet">
     <link href="{% static "css/site.css" %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script> {# :( #}
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
@@ -61,7 +62,6 @@
 {% endblock %}
 
 {% block footer_base %}
-    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 {% endblock %}
 
