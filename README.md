@@ -1,5 +1,5 @@
 # Conference website
-This is still a work in process. 
+This is still a work in process.
 
 ## Setup
 #### 1. Install `virtualenvwrapper`
@@ -9,6 +9,10 @@ Follow the instructions [here](https://virtualenvwrapper.readthedocs.io/en/lates
 ```bash
 # Create a new virtualenv
 mkvirtualenv pyarkconf
+
+# NOTE: this project requires python 2.7-ish. If your default is python 3, you'll need to do
+# something like this, changing the path to wherever you python 2 is located:
+mkvirtualenv ---python /usr/local/bin/python2 pyarkconf
 
 # Install dependencies
 pip install -r requirements.txt
