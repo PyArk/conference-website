@@ -29,5 +29,5 @@
             <i class="fa fa-pencil"></i> Edit this content
         </button>
     {% endif %}
-    {{ box.content|safe }}
+    {{ box.content|render_markup|safe }}
 </div>
