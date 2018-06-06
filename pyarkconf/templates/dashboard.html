@@ -11,8 +11,6 @@
 {% block body %}
     <div class="dashboard-panel">
         <div class="dashboard-panel-header">
-            <i class="fa fa-bullhorn"></i>
-            <h3>{% trans "Speaking" %}</h3>
             <div class="pull-right header-actions">
                 {% if not user.speaker_profile %}
                     <a href="{% url "speaker_create" %}" class="btn btn-default">
@@ -27,7 +25,14 @@
                     </a>
                 {% endif %}
             </div>
+
+            <h3>
+                <i class="fa fa-bullhorn"></i>
+                {% trans "Speaking" %}
+            </h3>
         </div>
+
+        <hr>
 
         <div class="dashboard-panel-content">
             {% if not user.speaker_profile %}
@@ -85,10 +90,12 @@
         </div>
     </div>
 
+    <div style="height:50px;">
+        &nbsp;
+    </div>
+
     <div class="dashboard-panel">
         <div class="dashboard-panel-header">
-            <i class="fa fa-briefcase"></i>
-            <h3>{% trans "Sponsorship" %}</h3>
             <div class="pull-right header-actions">
                 {% if not user.sponsorships.exists %}
                     <a href="{% url "sponsor_apply" %}" class="btn btn-default">
@@ -96,7 +103,13 @@
                     </a>
                 {% endif %}
             </div>
+            <h3>
+                <i class="fa fa-briefcase"></i>
+                {% trans "Sponsorship" %}
+            </h3>
         </div>
+
+        <hr>
 
         <div class="dashboard-panel-content">
             {% if not user.sponsorships.exists %}
