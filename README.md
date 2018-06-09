@@ -28,6 +28,13 @@ pip install -r requirements.txt
 ./manage.py runserver
 ```
 
+#### 5: Don't Forget
+Create an admin user by running 
+```bash
+./manage.py createsuperuser
+```
+Then create a conference object. You can do that at http://localhost:8000/admin/ (search for conference). 
+
 The server will be running at [http://localhost:8000](http://localhost:8000).
 
 

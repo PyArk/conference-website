@@ -109,3 +109,9 @@ _build
 dev.db
 site_media
 .vscode
+.idea/conference-website.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/preferred-vcs.xml
+.idea/vcs.xml
+.idea/workspace.xml
