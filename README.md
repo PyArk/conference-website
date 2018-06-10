@@ -46,3 +46,7 @@ The server will be running at [http://localhost:8000](http://localhost:8000).
 - [ ] Create sponsorship terms page (search: `TODO_SPONSORSHIP_TERMS`)
 - [ ] Speaker profile form is no-op
 - [ ] Header covers content on smaller screens
+
+## Symposion
+
+This project is built on top of the [symposion](https://github.com/pinax/symposion) package.  The documentation for it can be found [here](https://symposion.readthedocs.io/en/latest/)
