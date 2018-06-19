@@ -1,8 +1,8 @@
 Django==1.9.2
 django-appconf==1.0.1
 django-bootstrap-form==3.4
-django-jsonfield==0.9.13
-django-markitup==2.2.2
+django-jsonfield==1.0.1
+django-markitup==3.0.0
 django-model-utils==2.4
 django-reversion==1.10.1
 django-sitetree==1.5.1
@@ -25,4 +25,4 @@ psycopg2
 git+https://github.com/pinax/pinax-boxes@c69829f653d37bf090d1f62fb809824eb467c3bf#egg=pinax-boxes
 
 # symposion
-git+https://github.com/pinax/symposion.git#egg=symposion
+git+https://github.com/adamclmns/symposion.git#egg=symposion
