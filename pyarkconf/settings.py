@@ -91,7 +91,7 @@ TEMPLATES = [
             'debug':DEBUG, #TODO: Change before deployment
             'context_processors':[
                 'django.contrib.auth.context_processors.auth',
-                'jango.core.context_processors.debug',
+                'django.core.context_processors.debug',
                 'django.template.context_processors.i18n',
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
@@ -158,7 +158,7 @@ INSTALLED_APPS = [
     "symposion.conference",
     "symposion.proposals",
     # "symposion.reviews",
-    # "symposion.schedule",
+    "symposion.schedule",
     "symposion.speakers",
     "symposion.sponsorship",
     "symposion.teams",
