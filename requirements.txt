@@ -25,4 +25,4 @@ psycopg2
 git+https://github.com/pinax/pinax-boxes@c69829f653d37bf090d1f62fb809824eb467c3bf#egg=pinax-boxes
 
 # symposion
-git+https://github.com/adamclmns/symposion.git#egg=symposion
+git+https://github.com/pinax/symposion.git#egg=symposion
