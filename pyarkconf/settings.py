@@ -234,3 +234,11 @@ PROPOSAL_FORMS = {
     "tutorial": "pyarkconf.proposals.forms.TutorialProposalForm",
     "talk": "pyarkconf.proposals.forms.TalkProposalForm",
 }
+
+# Local Settings
+
+try:
+    from local_settings import *
+    
+except ImportError:
+    pass
