@@ -5,9 +5,8 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = PACKAGE_ROOT
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-EMAIL_DEBUG = DEBUG
+DEBUG = True #TODO: Change before deployment
+EMAIL_DEBUG = DEBUG #TODO: Change before deployment
 
 DATABASES = {
     "default": {
@@ -80,26 +79,32 @@ STATICFILES_FINDERS = [
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "9vb804%+pja2$o57*s38t=6_j(c&z53s=^mjz39al#odqu72k="
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = [
-    "django.template.loaders.filesystem.Loader",
-    "django.template.loaders.app_directories.Loader",
+# Template Configuration with template processors.
+TEMPLATES = [
+    {
+        'BACKEND':'django.template.backends.django.DjangoTemplates',
+        'DIRS':[
+            os.path.join(PACKAGE_ROOT, "templates"),
+            ],
+        'APP_DIRS':True,
+        'OPTIONS':{
+            'debug':DEBUG, #TODO: Change before deployment
+            'context_processors':[
+                'django.contrib.auth.context_processors.auth',
+                'django.core.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.template.context_processors.request',
+                'django.contrib.messages.context_processors.messages',
+                'account.context_processors.account',
+                'pinax_theme_bootstrap.context_processors.theme',
+                'symposion.reviews.context_processors.reviews',
+            ]
+        }
+    }
 ]
-
-TEMPLATE_CONTEXT_PROCESSORS = [
-    "django.contrib.auth.context_processors.auth",
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
-    "django.core.context_processors.static",
-    "django.core.context_processors.tz",
-    "django.core.context_processors.request",
-    "django.contrib.messages.context_processors.messages",
-    "account.context_processors.account",
-    "pinax_theme_bootstrap.context_processors.theme",
-    "symposion.reviews.context_processors.reviews",
-]
-
 
 MIDDLEWARE_CLASSES = [
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -117,10 +122,6 @@ ROOT_URLCONF = "pyarkconf.urls"
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = "pyarkconf.wsgi.application"
-
-TEMPLATE_DIRS = [
-    os.path.join(PACKAGE_ROOT, "templates"),
-]
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
@@ -157,7 +158,7 @@ INSTALLED_APPS = [
     "symposion.conference",
     "symposion.proposals",
     # "symposion.reviews",
-    # "symposion.schedule",
+    "symposion.schedule",
     "symposion.speakers",
     "symposion.sponsorship",
     "symposion.teams",

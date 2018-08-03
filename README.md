@@ -20,6 +20,9 @@ pip install -r requirements.txt
 
 #### 3. Run migrations
 ```bash
+./manage.py makemigrations
+./manage.py makemigrations eventlog
+./manage.py makemigrations symposion
 ./manage.py migrate
 ```
 
