@@ -115,3 +115,5 @@ site_media
 .idea/preferred-vcs.xml
 .idea/vcs.xml
 .idea/workspace.xml
+
+local_settings.py
