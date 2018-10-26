@@ -1,0 +1,52 @@
+<!-- TODO: Replace Lorem Ipsum -->
+{% load staticfiles %}
+<!-- Start schedule Area -->
+<section class="schedule-area pb-100" id="schedule">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">How Our Customers Treat Us</h1>
+                    <p>Who are in extremely love with eco friendly system.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="table-wrap col-lg-12">
+                <table class="schdule-table table table-bordered">
+                    <thead class="thead-light">
+                    <tr>
+                        <th class="head" scope="col">sl</th>
+                        <th class="head" scope="col">session</th>
+                        <th class="head" scope="col">speaker</th>
+                        <th class="head" scope="col">venue</th>
+                        <th class="head" scope="col">time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% comment %} Copy the following template to add new items to the list. {% endcomment %}
+                    {% for event in schedule %}
+                        <tr>
+                            <th class="name" scope="row">{{ index }}</th>
+                            <td>{{ event.title }}</td>
+                            <td>{{ event.name }}</td>
+                            <td>{{ event.room }}</td>
+                            <td>{{ event.time }}</td>
+                        </tr>
+                    {% endfor %}
+                    <!-- <tr>
+                        <th class="name" scope="row">01</th>
+                        <td>Reception & Tailing Seats</td>
+                        <td>Isabelle Cooper</td>
+                        <td>3rd Hall Room</td>
+                        <td>02.00</td>
+                    </tr> -->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End schedule Area -->

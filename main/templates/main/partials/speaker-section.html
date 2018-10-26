@@ -1,0 +1,38 @@
+<!-- TODO: Replace Lorem Ipsum -->
+{% load staticfiles %}
+<!-- Start speakers Area -->
+<section class="spekers-area pb-100" id="speakers">
+    <div class="container-fluid">
+        <div class="row no-padding">
+            <div class="active-speaker-carusel col-lg-12 no-padding">
+
+                {% for speaker in speakers %}
+                    <div class="single-speaker item">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 speaker-img no-padding">
+                                    <img src="img/s1.jpg" alt="">
+                                </div>
+                                <div class="col-md-6 speaker-info no-padding">
+                                    <h6 class="text-uppercase">{{ speaker.company }}</h6>
+                                    <h1 class="text-white">{{ speaker.name }}</h1>
+                                    <p>{{ speaker.bio }}</p>
+                                    <p><span class="lnr lnr-phone-handset"></span>{{ speaker.phone }}</p>
+                                    <p><span class="lnr lnr-location"></span>{{ speaker.email }}</p>
+                                    <ul>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                                        <a href="#"><i class="fa fa-behance"></i></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End speakers Area -->

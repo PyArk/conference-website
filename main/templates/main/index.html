@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block title %}Arkansas Python Conference{% endblock %}
+
+{% block content %}
+    {% include "main/partials/banner.html" %}
+    {% include "main/partials/about-us-section.html" %}
+    {% include "main/partials/speaker-section.html" %}
+    {% include "main/partials/schedule-section.html" %}
+    {% include "main/partials/sponsor-section.html" %}
+    {% include "main/partials/call-to-action-section.html" %}
+{% endblock %}

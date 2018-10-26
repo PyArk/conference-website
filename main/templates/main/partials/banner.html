@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!-- start banner Area -->
+<section class="banner-area relative" id="home">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row fullscreen d-flex align-items-center justify-content-center">
+                <div class="banner-content col-lg-9 col-md-12">
+                    <h6>Central Arkansas Python Artists</h6>
+                    <h1 class="text-white">
+                        {{ banner.title }}
+                    </h1>
+                    <!-- Configure the Timer in main.js "var countDownDate" -->
+                    <div class="countdown">
+                        <div id="timer" class="text-white"></div>
+                    </div>
+
+                    <h4><span class="lnr lnr-calendar-full"></span>{{ banner.start_dt }}</h4>
+                    <h4>
+                        <sp an class="lnr lnr-map"></span>
+                        {{ banner.location.address }}</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->

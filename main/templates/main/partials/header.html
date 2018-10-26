@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<header id="header" id="home">
+    <div class="container">
+        <div class="row align-items-center justify-content-between d-flex">
+            <div id="logo">
+                <a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" title="Arkansas Python Conference"/></a>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    {% comment %}
+                    For Nav in NavItems, render according to it's type
+                    {% endcomment %}
+                    {% for nav in navbar %}
+                        {% if nav.type == "LABEL" %}
+                            <li><a href="{{ nav.destinationPath }}">{{ nav.display }}</a></li>
+                        {% elif nav.type == "DROPDOWN" %}
+                            <li class="menu-has-children"><a href="">Pages</a>
+                                <ul>
+                                    <!-- TODO: Replace Lorem Ipsum -->
+                                    <li><a href="generic.html">Generic</a></li>
+                                    <li><a href="elements.html">Elements</a></li>
+                                </ul>
+                            </li>
+                            {% comment %}
+                            Need to revisit the drop downs... not going to work in current state.
+                            {% endcomment %}
+                        {% endif %}
+                    {% endfor %}
+                    {% comment %}
+                    This will be a special button, that will go to the registration page when we have it live.
+                    Might add the styling to the model and add into the loop
+
+                    <li><a class="ticker-btn" href="#">Buy Ticket</a></li>
+
+                    {% endcomment %}
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </div>
+</header><!-- #header -->

@@ -1,55 +1,39 @@
-# Conference website
-This is still a work in process.
+# README.md
 
-## Setup
-#### 1. Install `virtualenvwrapper`
-Follow the instructions [here](https://virtualenvwrapper.readthedocs.io/en/latest/install.html).
+A bare bones conference website.
 
-#### 2. Install everything else
-```bash
-# Create a new virtualenv
-mkvirtualenv pyarkconf
+Single HTML page with some dynamically loaded "Tiles" will make up most of the content in this site. 
 
-# NOTE: this project requires python 2.7-ish. If your default is python 3, you'll need to do
-# something like this, changing the path to wherever you python 2 is located:
-mkvirtualenv ---python /usr/local/bin/python2 pyarkconf
-
-# Install dependencies
+## Officially Supporting Python 3.6.6 
 pip install -r requirements.txt
+
+This is the version Heroku uses, so for the short-term, other versions are not being tested, 
+and their requirements files not updated.
+
+TODO: Update Python 3.7 requirements and test
+TODO: Determine if Python 2.7 is even worth keeping up with at this point.
+  
+## Initial Setup
+There's a command hook that can be used to do the whole initial setup and start the server fresh.
+```commandline
+python manage.py install_main
 ```
 
-#### 3. Run migrations
-```bash
-./manage.py makemigrations
-./manage.py makemigrations eventlog
-./manage.py makemigrations symposion
-./manage.py migrate
+
+## Known Issues
+[_] - Issue reported from s3 dependencies 
+```commandline
+ /app/.heroku/python/lib/python3.6/site-packages/storages/backends/s3boto3.py:282: UserWarning: The default behavior 
+ of S3Boto3Storage is insecure and will change in django-storages 2.0. By default files and new buckets are saved 
+ with an ACL of 'public-read' (globally publicly readable). Version 2.0 will default to using the bucket's ACL. 
+ To opt into the new behavior set AWS_DEFAULT_ACL = None, otherwise to silence this warning explicitly 
+ set AWS_DEFAULT_ACL.
 ```
 
-#### 4. Run the server
-```bash
-./manage.py runserver
-```
-
-#### 5: Don't Forget
-Create an admin user by running 
-```bash
-./manage.py createsuperuser
-```
-Then create a conference object. You can do that at http://localhost:8000/admin/ (search for conference). 
-
-The server will be running at [http://localhost:8000](http://localhost:8000).
-
-
-## Todos:
-- [X] Markdown is not being processed in "boxes" (see "Edit this content" links when logged in with an admin account)
-- [X] Missing template for `/speaker/create/`
-- [X] Missing template for `/sponsors/apply/`
-- [X] Misc layout bugs (e.g. inline edit buttons floating next to content, icons not lined up with titles on `/dashboard/`, etc)
-- [ ] Create sponsorship terms page (search: `TODO_SPONSORSHIP_TERMS`)
-- [ ] Speaker profile form is no-op
-- [ ] Header covers content on smaller screens
-
-## Symposion
-
-This project is built on top of the [symposion](https://github.com/pinax/symposion) package.  The documentation for it can be found [here](https://symposion.readthedocs.io/en/latest/)
+## Google App Engine Deployment
+Create a SQL Cloud Instance and set the variables appropriately
+GAE_SQL_PASS
+GAE_SQL_USER
+GAE_SQL_CON_STR
+GAE_INSTANCE
+Follow this guide https://cloud.google.com/python/django/flexible-environment
