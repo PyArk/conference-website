@@ -165,7 +165,7 @@ STATICFILES_DIRS = [
 
 # If you'd like to use S3 Storage, just set the environment variables S3_BUCKET_NAME, S3_SECRET_KEY, S3_ACCESS_ID
 try:
-    os.environ['S3_BUCKET_NAME']
+    print(os.environ['S3_BUCKET_NAME'])
     print("USING S3 CONFIGURATION FROM ENVIRONMENT VARIABLES")
     # - https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
     AWS_ACCESS_KEY_ID = os.environ['S3_ACCESS_ID']
@@ -179,4 +179,4 @@ try:
     STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 except KeyError:
-    STATIC_URL = '/static/'
+    STATIC_URL = '/static/' 
