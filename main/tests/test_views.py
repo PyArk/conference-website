@@ -97,7 +97,14 @@ class MainViewTest(TestCase):
     def test_index(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
+    def test_index(self):
+        response = self.client.get('/proposal')
+        self.assertEqual(response.status_code, 200)
 
+    def test_index(self):
+        response = self.client.get('/sponsorship')
+        self.assertEqual(response.status_code, 200)
+    
     def test_page_by_slug(self):
         response = self.client.get('/pages/test-page/')
         self.assertEqual(response.status_code, 200)

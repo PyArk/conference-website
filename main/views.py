@@ -5,6 +5,27 @@ from django.shortcuts import render
 
 from .models import *
 
+def sponsorForm(request):
+    navbar = NavBarItem.objects.filter(isActive=True)
+    speakers = Speaker.objects.all()
+    schedule = Proposal.objects.filter(accepted=True)
+    conferenceDetail = ConferenceDetail.objects.all()
+
+    return render(request, "main/sponsorForm.html",{'speakers': speakers,
+                   'schedule': schedule,
+                   'banner': conferenceDetail[0],
+                   'navbar': navbar})
+
+def proposalForm(request):
+    navbar = NavBarItem.objects.filter(isActive=True)
+    speakers = Speaker.objects.all()
+    schedule = Proposal.objects.filter(accepted=True)
+    conferenceDetail = ConferenceDetail.objects.all()
+
+    return render(request, "main/proposalForm.html",{'speakers': speakers,
+                   'schedule': schedule,
+                   'banner': conferenceDetail[0],
+                   'navbar': navbar})
 
 # TODO: Implement some views
 def index(request):
