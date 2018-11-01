@@ -35,16 +35,16 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
     'storages',
+    'main',
     'ckeditor',
+    'suit',
 
 ]
 
@@ -155,28 +155,11 @@ SUIT_CONFIG = {
 }
 
 
-# This is always needed, for the first-party static content that we want to get uploaded to S3
+# This is always needed, for the first-party static content that we want to get collected with collect static
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-# This is really only meant for local development, or if you just don't have any other option.
+
+
+STATIC_URL = '/static/' 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/'),
 ]
-
-
-# If you'd like to use S3 Storage, just set the environment variables S3_BUCKET_NAME, S3_SECRET_KEY, S3_ACCESS_ID
-try:
-    print(os.environ['S3_BUCKET_NAME'])
-    print("USING S3 CONFIGURATION FROM ENVIRONMENT VARIABLES")
-    # - https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
-    AWS_ACCESS_KEY_ID = os.environ['S3_ACCESS_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['S3_SECRET_KEY']
-    AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
-    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-    AWS_S3_OBJECT_PARAMETERS = {
-        'CacheControl': 'max-age=86400',
-    }
-    AWS_LOCATION = 'static'
-    STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-except KeyError:
-    STATIC_URL = '/static/' 
