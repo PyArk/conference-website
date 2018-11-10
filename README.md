@@ -22,3 +22,4 @@ python manage.py install_main
 * S3_ACCESS_ID
 #### For Heroku Postgres Database
 * DATABASE_URL
+* HEROKU_HOSTNAME

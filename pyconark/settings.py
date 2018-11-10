@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
 
 try:
     ALLOWED_HOSTS.append(os.environ['HEROKU_HOSTNAME'])
-except:
+except KeyError:
     print("No hostname variable provided")
 
 # Application definition
