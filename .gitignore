@@ -97,4 +97,5 @@ pyconark/static/admin/
 pyconark/static/ckeditor/
 pyconark/static/cms/
 pyconark/static/suit/
+pyconark/static/**
 
