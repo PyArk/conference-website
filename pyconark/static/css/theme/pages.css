@@ -340,7 +340,7 @@
 }
 
 .about-feature-area {
-  background: url(../img/elements/feature-bg.jpg) center;
+  background: url(/static/img/elements/feature-bg.jpg) center;
   background-size: cover;
 }
 
