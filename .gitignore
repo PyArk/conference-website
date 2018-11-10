@@ -97,8 +97,4 @@ pyconark/static/admin/
 pyconark/static/ckeditor/
 pyconark/static/cms/
 pyconark/static/suit/
-pyconark/static/fonts/
-pyconark/static/css/
-pyconark/static/img/
-pyconark/static/js/
-pyconark/static/scss/
+
