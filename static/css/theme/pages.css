@@ -223,7 +223,7 @@
 }
 
 .info-right {
-  background: url(/static/img/elements/video-bg.png) no-repeat center;
+  background: url(../../img/elements/video-bg.png) no-repeat center;
   background-size: cover;
   height: 251px;
 }
@@ -340,7 +340,7 @@
 }
 
 .about-feature-area {
-  background: url(/static/img/elements/feature-bg.jpg) center;
+  background: url(../../img/elements/feature-bg.jpg) center;
   background-size: cover;
 }
 
