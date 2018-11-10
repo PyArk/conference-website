@@ -28,9 +28,12 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "pyconark.herokuapp.com",
-    "pyconark-gcp-dev-2019.appspot.com",
 ]
+
+try:
+    ALLOWED_HOSTS.append(os.environ['HEROKU_HOSTNAME'])
+except:
+    print("No hostname variable provided")
 
 # Application definition
 
