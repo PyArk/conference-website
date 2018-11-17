@@ -36,8 +36,7 @@ def index(request):
     schedule = Proposal.objects.filter(accepted=True)
     conferenceDetail = ConferenceDetail.objects.all()
 
-
-    # TODO: Fix this so it's not so dangerous....
+    # TODO: Fix this so it's not so error prone....
     return render(request, 'main/index.html',
                   {'speakers': speakers,
                    'schedule': schedule,
