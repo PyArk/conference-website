@@ -75,7 +75,7 @@ class Command(BaseCommand):
 
         # Create the Home button on the nav bar
         navItem = NavBarItem()
-        navItem.destinationPath = "#"
+        navItem.destinationPath = "/"
         navItem.display = "Home"
         navItem.isActive = True
         navItem.type = "LABEL"
